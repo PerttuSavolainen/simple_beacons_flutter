@@ -21,7 +21,8 @@
 
         <receiver
             android:name="com.umair.beacons_plugin.RebootBroadcastReceiver"
-            android:enabled="true">
+            android:enabled="true"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"></action>
             </intent-filter>
@@ -29,15 +30,18 @@
 
         <service
             android:name="com.umair.beacons_plugin.BeaconsDiscoveryService"
+            android:enabled="true"
             android:exported="true" />
 
         <service
             android:name="org.altbeacon.beacon.service.BeaconService"
             android:enabled="true"
+            android:exported="true"
             android:isolatedProcess="false"
             android:label="beacon" />
         <service
             android:name="org.altbeacon.beacon.BeaconIntentProcessor"
-            android:enabled="true" />
+             android:enabled="true"
+            android:exported="true" />
     </application>
 </manifest>
